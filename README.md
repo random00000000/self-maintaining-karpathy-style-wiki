@@ -41,6 +41,7 @@ If your harness supports the `SKILL.md` skill convention, copy [`skills/karpathy
 - **A babysitting-detector**: the ledger is one page you can scan in a minute — a missing row means your agent skipped the rule.
 - **Model accountability**: every row names the exact agent/harness that did the work (Claude Sonnet 5, Codex, Z Code, ...), so switching tools mid-project never blurs who did what.
 - **AI notes vs. your notes**: the ledger keeps an AI Notes column (written by whichever model worked the row) separate from a Human Notes column (yours alone — agents never write there).
+- **Claude Code aware**: Claude Code can surface a follow-up, correction, or new request mid-task, inside the same continuous agent turn, rather than waiting for a reply first. The mandate treats every one of those as its own prompt boundary — logged the moment it lands, not batched until the whole chain of interjections finally resolves. (This is exactly the gap that motivated this rule: a live session where three quick follow-ups sent while an agent was mid-implementation went completely unlogged until the human asked.)
 - **Honest history**: results are never rewritten; late corrections are appended as `UPDATE (date):` notes.
 - **Intent that survives**: Systems pages quote *your* requests, so future agents know why code is the way it is — and what was already tried and rejected.
 

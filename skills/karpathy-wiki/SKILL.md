@@ -128,7 +128,15 @@ later. One-line results only. Notes split into AI Notes (written by whichever
 model worked the row) and Human Notes (written only by the human — an agent
 never writes there). Failures are never silently dropped; late changes are
 `UPDATE (date):` notes appended to AI Notes (or Human Notes for the human's
-own follow-up), never rewrites.
+own follow-up), never rewrites. **Multiple human messages can land inside one
+continuous agent turn** — Claude Code surfaces a follow-up, correction, or new
+request mid-task via a system-reminder ("This is how Claude Code surfaces
+messages the user sends mid-turn...") rather than waiting for a reply first.
+Treat every arrival as its own prompt boundary: write the row for whatever the
+prior prompt's work has reached at that moment — even if only partial or
+discussion-only — before continuing into the new request. Do not defer
+everything to one merged end-of-task wrap-up; that is exactly how rows get
+forgotten.
 
 ### Systems wiki (build it while you build the system)
 Whenever a system is created or substantially extended, create or update
@@ -201,6 +209,10 @@ Rules:
   another model wrote.
 - ALWAYS write your own commentary into AI Notes, never into Human Notes —
   that column belongs to the human only.
+- ALWAYS treat a mid-turn interjection (a new human message arriving while
+  you're still working a prior one — Claude Code delivers these via
+  system-reminder) as its own prompt boundary. Log the prior prompt's row
+  before absorbing the new request, not after the whole chain finishes.
 - NEVER rewrite ledger rows; append `UPDATE (date):` notes.
 - NEVER batch ledger writes; write per prompt, immediately.
 - NEVER create a wiki page when an existing section would do.
