@@ -16,7 +16,7 @@ Before non-trivial work, read the wiki's `Wiki Home.md` and `PROMPT-LEDGER.md` (
 
 ### Prompt ledger (mandatory, every prompt, immediately)
 
-Every single human prompt gets its own row in `<Project> - Wiki/PROMPT-LEDGER.md`, written immediately when the work for that prompt is finished — never batched to the end of a session. No exemptions for small prompts, bug reports, questions, or meta-requests. The ONLY exception is an explicit instruction from the human to not log that specific prompt. Prepend new rows at the top of the table (latest first). One-line results only; failures are never silently dropped; late changes are `UPDATE (date):` notes, never rewrites.
+Every single human prompt gets its own row in `<Project> - Wiki/PROMPT-LEDGER.md`, written immediately when the work for that prompt is finished — never batched to the end of a session. No exemptions for small prompts, bug reports, questions, or meta-requests. The ONLY exception is an explicit instruction from the human to not log that specific prompt. Prepend new rows at the top of the table (latest first). Every row records a Model column naming the exact agent/harness that did the work (e.g. "Claude Sonnet 5", "Codex", "Z Code") — always filled in, never blank, never guessed on the human's behalf, and never relabeled by a different model later. One-line results only. Notes are split into AI Notes (written by whichever model worked the row) and Human Notes (written only by the human — an agent never writes there). Failures are never silently dropped; late changes are `UPDATE (date):` notes appended to AI Notes (or Human Notes for the human's own follow-up), never rewrites.
 
 ### Systems wiki (build it while you build the system)
 

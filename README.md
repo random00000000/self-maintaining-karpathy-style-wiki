@@ -2,7 +2,7 @@
 
 A universal, **model- and harness-agnostic** pattern that turns any coding project into a project that *remembers*. Once integrated, your AI agent (any agent) automatically maintains a living Obsidian wiki while it codes:
 
-- a **prompt ledger** — one row per request you make, with a one-line result; failures are never silently dropped;
+- a **prompt ledger** — one row per request you make, with a one-line result and which model did the work; failures are never silently dropped;
 - **Systems pages** — one wiki page per system, written *on the fly as the system is built*, capturing your intent, the rules, the decisions, and what was tried and rejected;
 - a **Wiki Home** — the entry point that makes any fresh agent (or you, months later) productive in minutes.
 
@@ -39,6 +39,8 @@ If your harness supports the `SKILL.md` skill convention, copy [`skills/karpathy
 
 - **Compounding development**: every session starts from accumulated knowledge instead of zero context.
 - **A babysitting-detector**: the ledger is one page you can scan in a minute — a missing row means your agent skipped the rule.
+- **Model accountability**: every row names the exact agent/harness that did the work (Claude Sonnet 5, Codex, Z Code, ...), so switching tools mid-project never blurs who did what.
+- **AI notes vs. your notes**: the ledger keeps an AI Notes column (written by whichever model worked the row) separate from a Human Notes column (yours alone — agents never write there).
 - **Honest history**: results are never rewritten; late corrections are appended as `UPDATE (date):` notes.
 - **Intent that survives**: Systems pages quote *your* requests, so future agents know why code is the way it is — and what was already tried and rejected.
 
