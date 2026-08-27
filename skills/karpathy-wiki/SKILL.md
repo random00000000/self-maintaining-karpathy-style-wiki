@@ -1,6 +1,6 @@
 ---
 name: karpathy-wiki
-description: Inject a persistent wiki-brain note-taking pattern into any project - a per-prompt ledger, an Obsidian wiki named "<Project> - Wiki" with a Wiki Home and on-the-fly Systems pages - by writing the project's AGENTS.md so every future agent always maintains and updates the wiki while coding. Use when the user asks to add wiki orchestration, a prompt ledger, living documentation, or a "karpathy wiki brain" to a project.
+description: Inject a persistent wiki-brain note-taking pattern into any project - a per-prompt ledger, an Obsidian wiki named "<Project> - Wiki" with a Wiki Home and on-the-fly Systems pages - by writing the project's AGENTS.md so every future agent always maintains and updates the wiki while coding. Use when the user asks to add wiki orchestration, a prompt ledger, living documentation, a project wiki or knowledge base, or a "karpathy wiki brain" to a project - and whenever an existing project wiki must be audited, repaired, or migrated to this pattern. The Naming conventions section is binding: never substitute kebab-case files, index/log/raw structures, or any other wiki layout.
 ---
 
 # Karpathy Wiki Skill
@@ -25,6 +25,40 @@ The enforcement mechanism is the project's **AGENTS.md**: this skill writes a se
 - **Minimal change**: update one existing paragraph over creating three new files.
 - **Compression**: merge duplicates, delete obsolete wording; the wiki becomes more coherent, not merely larger.
 - Label uncertainty honestly (FACT / OBSERVATION / HYPOTHESIS / DECISION / QUESTION). Speculation becomes fact only through evidence.
+
+## Naming conventions (exact — these make wikis interoperable)
+
+Every wiki this skill touches uses these names literally. They exist so that a human can
+open any project's wiki in Obsidian and already know their way around, and so that
+`[[wikilinks]]` written by one agent resolve for the next. Deviating breaks both.
+
+- **Wiki folder:** `<Project Display Name> - Wiki/` at the repo root. The display name is
+  Title Case with spaces (`Victory Marche`, not `victory-marche`); the separator is
+  exactly ` - ` (space, hyphen, space). Example: `Victory Marche - Wiki/`.
+- **Fixed files, exact names:** `Wiki Home.md` and `PROMPT-LEDGER.md` (ledger name is
+  all-caps with a hyphen). The systems folder is `Systems/` with a capital S.
+- **Systems pages:** Title Case noun phrases with spaces, named after the system itself —
+  `Marching Column.md`, `Building System.md`, `Networking.md`. Never kebab-case,
+  snake_case, or camelCase; no dates in filenames; no YAML frontmatter required.
+- **Prefixed page types** inside `Systems/`, uppercase prefix + ` - `:
+  - `PLAN - <Name>.md` — a forward-looking design or plan for something not yet built
+    (e.g. `PLAN - The Campaign.md`). When it gets built, the plan's durable content moves
+    to a normal Systems page.
+  - `PATTERN - <Name>.md` — a reusable pattern meant to be applied again and again
+    (e.g. `PATTERN - Production Buildings.md`).
+- **Other top-level pages** are allowed for cross-cutting, non-system knowledge
+  (`Distribution Strategy.md`, `Ideas Backlog.md`, `Content Patterns.md`), same Title
+  Case naming. `Human Notes.md` belongs to the human; agents read it but never write it.
+- **Ledger table columns, exact:**
+  `| Date | Model | Request | Result (one line) | AI Notes | Human Notes |`
+  — dates are `YYYY-MM-DD`, newest row at the top, result states from the fixed set
+  (DELIVERED / DELIVERED (unverified) / PARTIAL / FAILED / DECLINED / DISCUSSION).
+- **Wikilinks match filenames exactly**, including prefixes and folder:
+  `[[Systems/PLAN - The Campaign]]`, with `|` for display text.
+- **This is not the kebab-case wiki pattern.** No `index.md`, no `log.md`, no `raw/`
+  directory, no kebab-case page names, no frontmatter blocks. If you find such a wiki in
+  a project you are integrating, migrate its content into this structure (or archive it)
+  — never extend it and never mix the two patterns in one project.
 
 ## Main action 1: `integrate` — inject the pattern into a project
 

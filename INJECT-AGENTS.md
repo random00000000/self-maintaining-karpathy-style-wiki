@@ -10,6 +10,19 @@
 
 Development must compound across sessions. The wiki is the brain; agent sessions are temporary compute. The wiki lives in `<Project> - Wiki/` as plain Obsidian-compatible Markdown with [[wikilinks]] — the human opens that folder as their Obsidian vault.
 
+### Naming conventions (exact)
+
+These names are literal, so any agent's `[[wikilinks]]` resolve for the next agent and the human always knows their way around:
+
+- Wiki folder: `<Project Display Name> - Wiki/` at the repo root — Title Case display name with spaces, separator exactly ` - `.
+- Fixed files: `Wiki Home.md`, `PROMPT-LEDGER.md` (all-caps), folder `Systems/` (capital S).
+- Systems pages: Title Case noun phrases with spaces (`Marching Column.md`) — never kebab-case, snake_case, or camelCase; no dates in filenames; no YAML frontmatter.
+- Prefixed pages in `Systems/`: `PLAN - <Name>.md` for designs not yet built; `PATTERN - <Name>.md` for reusable patterns. Uppercase prefix + ` - `.
+- Other Title Case top-level pages are allowed for cross-cutting knowledge; `Human Notes.md` is written only by the human.
+- Ledger table columns, exact: `| Date | Model | Request | Result (one line) | AI Notes | Human Notes |` — dates `YYYY-MM-DD`, newest row at the top.
+- Wikilinks match filenames exactly, including folder and prefix: `[[Systems/PLAN - The Campaign]]`.
+- Never substitute another wiki layout (no `index.md`/`log.md`/`raw/`, no kebab-case). Migrate or archive such structures; never mix patterns.
+
 ### Session startup
 
 Before non-trivial work, read the wiki's `Wiki Home.md` and `PROMPT-LEDGER.md` (latest rows = latest intent), plus only the Systems pages the task touches. Load the smallest context that is sufficient.

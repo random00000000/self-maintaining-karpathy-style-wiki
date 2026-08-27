@@ -21,6 +21,24 @@ The enforcement mechanism is your project's **agent instruction file** (`AGENTS.
 
 Because the rules live in the instruction file — not in a plugin, prompt, or product — they work with Claude Code, ZCode, Cursor, Codex, Aider, or a raw LLM with file access.
 
+## Naming conventions (exact)
+
+The pattern's names are literal — that's what lets wikilinks written by one agent resolve for the next, and lets a human open any project's wiki cold and know their way around:
+
+| Thing | Convention | Example |
+|---|---|---|
+| Wiki folder | `<Project Display Name> - Wiki/` at repo root; Title Case, separator exactly ` - ` | `Victory Marche - Wiki/` |
+| Entry point | `Wiki Home.md` (exact) | — |
+| Ledger | `PROMPT-LEDGER.md` (exact, all-caps) | — |
+| Systems folder | `Systems/` (capital S) | — |
+| Systems pages | Title Case noun phrase with spaces; never kebab/snake/camelCase, no dates, no frontmatter | `Marching Column.md` |
+| Plans | `PLAN - <Name>.md` inside `Systems/` for designs not yet built | `PLAN - The Campaign.md` |
+| Patterns | `PATTERN - <Name>.md` inside `Systems/` for reusable patterns | `PATTERN - Production Buildings.md` |
+| Ledger columns | `\| Date \| Model \| Request \| Result (one line) \| AI Notes \| Human Notes \|` — dates `YYYY-MM-DD`, newest at top | — |
+| Wikilinks | Match filenames exactly, folder and prefix included | `[[Systems/PLAN - The Campaign]]` |
+
+This is **not** a kebab-case `index.md`/`log.md`/`raw/` wiki, and the two must never be mixed in one project — an agent finding such a structure migrates or archives it.
+
 ## Quick start (any harness, any model)
 
 1. Copy [`INJECT-AGENTS.md`](INJECT-AGENTS.md) into your project.
