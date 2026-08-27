@@ -35,8 +35,11 @@ open any project's wiki in Obsidian and already know their way around, and so th
 - **Wiki folder:** `<Project Display Name> - Wiki/` at the repo root. The display name is
   Title Case with spaces (`Victory Marche`, not `victory-marche`); the separator is
   exactly ` - ` (space, hyphen, space). Example: `Victory Marche - Wiki/`.
-- **Fixed files, exact names:** `Wiki Home.md` and `PROMPT-LEDGER.md` (ledger name is
-  all-caps with a hyphen). The systems folder is `Systems/` with a capital S.
+- **Fixed files, exact names:** `Wiki Home.md` and `PROMPT-LEDGER.md` (all-caps with a
+  hyphen). The ledger is never named `log.md`, `Log.md`, `ledger.md`, or anything else —
+  `PROMPT-LEDGER.md` exactly. The systems folder is `Systems/` with a capital S. The
+  wiki folder always carries the project's display name — a bare `Wiki/` or `wiki/`
+  folder is wrong.
 - **Systems pages:** Title Case noun phrases with spaces, named after the system itself —
   `Marching Column.md`, `Building System.md`, `Networking.md`. Never kebab-case,
   snake_case, or camelCase; no dates in filenames; no YAML frontmatter required.

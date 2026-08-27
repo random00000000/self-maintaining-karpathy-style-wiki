@@ -15,7 +15,7 @@ Development must compound across sessions. The wiki is the brain; agent sessions
 These names are literal, so any agent's `[[wikilinks]]` resolve for the next agent and the human always knows their way around:
 
 - Wiki folder: `<Project Display Name> - Wiki/` at the repo root — Title Case display name with spaces, separator exactly ` - `.
-- Fixed files: `Wiki Home.md`, `PROMPT-LEDGER.md` (all-caps), folder `Systems/` (capital S).
+- Fixed files: `Wiki Home.md`, `PROMPT-LEDGER.md` (all-caps — never `log.md` or any other name), folder `Systems/` (capital S). The wiki folder always carries the project's display name; a bare `Wiki/` folder is wrong.
 - Systems pages: Title Case noun phrases with spaces (`Marching Column.md`) — never kebab-case, snake_case, or camelCase; no dates in filenames; no YAML frontmatter.
 - Prefixed pages in `Systems/`: `PLAN - <Name>.md` for designs not yet built; `PATTERN - <Name>.md` for reusable patterns. Uppercase prefix + ` - `.
 - Other Title Case top-level pages are allowed for cross-cutting knowledge; `Human Notes.md` is written only by the human.
