@@ -5,7 +5,10 @@ with a one-line result and which model did the work. One page: what was
 asked, what worked, what failed, and by whom.
 
 Format rules:
-- One row per request. Quote or tightly summarize; never invent content.
+- One row per request. The Request cell holds the human's EXACT prompt,
+  verbatim: typos, spacing and wording kept as sent, never summarized,
+  paraphrased, or corrected. The only transformations allowed are the ones
+  the table needs: line breaks become `<br>`, and `|` is escaped as `\|`.
 - Model: the exact agent/harness that did the work (e.g. "Claude Sonnet 5",
   "Codex", "Z Code"). Always filled in — never blank, never guessed on the
   human's behalf, never relabeled by a different model later.

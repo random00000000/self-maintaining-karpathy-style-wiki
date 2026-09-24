@@ -117,7 +117,10 @@ with a one-line result and which model did the work. One page: what was asked,
 what worked, what failed, and by whom.
 
 Format rules:
-- One row per request. Quote or tightly summarize; never invent content.
+- One row per request. The Request cell holds the human's EXACT prompt,
+  verbatim: typos, spacing and wording kept as sent, never summarized,
+  paraphrased, or corrected. The only transformations allowed are the ones
+  the table needs: line breaks become `<br>`, and `|` is escaped as `\|`.
 - Model: the exact agent/harness that did the work (e.g. "Claude Sonnet 5",
   "Codex", "Z Code"). Always filled in — never blank, never guessed on the
   human's behalf, never relabeled by a different model later.
@@ -161,7 +164,11 @@ exception is an explicit instruction to not log that specific prompt. Prepend
 new rows at the top (latest first). Every row records a Model column naming
 the exact agent/harness that did the work — always filled in, never blank,
 never guessed on the human's behalf, and never relabeled by a different model
-later. One-line results only. Notes split into AI Notes (written by whichever
+later. The Request cell holds the human's EXACT prompt, verbatim — typos,
+spacing and wording kept as sent, never summarized, paraphrased, or
+corrected (only line breaks become `<br>` and `|` is escaped as `\|`) — so
+intent survives in the human's own words. One-line results only. Notes
+split into AI Notes (written by whichever
 model worked the row) and Human Notes (written only by the human — an agent
 never writes there). Failures are never silently dropped; late changes are
 `UPDATE (date):` notes appended to AI Notes (or Human Notes for the human's
@@ -241,6 +248,8 @@ Rules:
 ## Behavioral contract for the agent running this skill
 
 - ALWAYS append to the ledger unless the human explicitly says not to.
+- ALWAYS record the human's exact prompt verbatim in the Request cell — never
+  summarize, paraphrase, shorten, or fix typos. Summaries lose intent.
 - ALWAYS fill in the Model column with your own exact name/harness — never
   leave it blank, never guess it on the human's behalf, never relabel a row
   another model wrote.
