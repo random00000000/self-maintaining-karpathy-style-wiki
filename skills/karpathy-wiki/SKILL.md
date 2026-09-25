@@ -9,7 +9,7 @@ description: Inject a persistent wiki-brain note-taking pattern into any project
 
 Turn a code repository into a project that *remembers*. When integrated, the project carries:
 
-1. **A wiki folder named `<Project> - Wiki`** (e.g. `Victory Marche - Wiki/`) so a human can open it directly as an Obsidian vault — no hunting inside the repo.
+1. **A wiki folder named `<Project> - Wiki`** (e.g. `Northwind Platform - Wiki/`) so a human can open it directly as an Obsidian vault — no hunting inside the repo.
 2. **A `Wiki Home.md`** — the established entry point with project identity and links.
 3. **A `PROMPT-LEDGER.md`** — one row per human request, one-line result, failures never dropped.
 4. **`Systems/<Name>.md` pages** — one per built system, written **on the fly while the system is built**, capturing intent, rules, decisions, and rejections.
@@ -33,8 +33,8 @@ open any project's wiki in Obsidian and already know their way around, and so th
 `[[wikilinks]]` written by one agent resolve for the next. Deviating breaks both.
 
 - **Wiki folder:** `<Project Display Name> - Wiki/` at the repo root. The display name is
-  Title Case with spaces (`Victory Marche`, not `victory-marche`); the separator is
-  exactly ` - ` (space, hyphen, space). Example: `Victory Marche - Wiki/`.
+  Title Case with spaces (`Northwind Platform`, not `northwind-platform`); the separator is
+  exactly ` - ` (space, hyphen, space). Example: `Northwind Platform - Wiki/`.
 - **Fixed files, exact names:** `Wiki Home.md` and `PROMPT-LEDGER.md` (all-caps with a
   hyphen). The ledger is never named `log.md`, `Log.md`, `ledger.md`, or anything else —
   `PROMPT-LEDGER.md` exactly. The systems folder is `Systems/` with a capital S. The
@@ -268,8 +268,8 @@ Rules:
 
 ## Reference implementation
 
-This exact pattern runs in VictoryMarche
-(`C:\Users\javie\OneDrive\Documents\ChatGPT\VictoryMarche`): see its
-`AGENTS.md` "Persistent Project Wiki" mandate, the `Victory Marche - Wiki/`
-folder (Wiki Home, PROMPT-LEDGER, populated Systems pages). It is the living
-example of the intended result.
+The canonical reference is this pattern's own repository,
+https://github.com/random00000000/self-maintaining-karpathy-style-wiki: the
+`INJECT-AGENTS.md` mandate and the three files in `templates/` show exactly
+what an integrated project carries. Do not open other local projects as
+examples; each project's wiki belongs to that project alone.

@@ -1,6 +1,6 @@
 # Agent Instruction Mandate — paste into your AGENTS.md / CLAUDE.md / .cursorrules
 
-> Replace `<Project>` with your project's display name (e.g. `Victory Marche`).
+> Replace `<Project>` with your project's display name (e.g. `Northwind Platform`).
 > Append this section to your agent instruction file. If none exists, this file becomes it.
 > Keep every mandate intact when adapting wording to your project.
 

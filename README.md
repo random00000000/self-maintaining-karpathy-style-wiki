@@ -27,7 +27,7 @@ The pattern's names are literal — that's what lets wikilinks written by one ag
 
 | Thing | Convention | Example |
 |---|---|---|
-| Wiki folder | `<Project Display Name> - Wiki/` at repo root; Title Case, separator exactly ` - ` | `Victory Marche - Wiki/` |
+| Wiki folder | `<Project Display Name> - Wiki/` at repo root; Title Case, separator exactly ` - ` | `Northwind Platform - Wiki/` |
 | Entry point | `Wiki Home.md` (exact) | — |
 | Ledger | `PROMPT-LEDGER.md` (exact, all-caps) | — |
 | Systems folder | `Systems/` (capital S) | — |
